@@ -1,19 +1,28 @@
-import styled from 'styled-components';
+import { makeStyles } from "@material-ui/core";
+const drawerWidth = 240;
 
-import { Container as ContainerMt } from '@material-ui/core';
+export default makeStyles((theme) => ({
+  root: {
+    display: "flex",
+  },
 
-export const Content = styled.div`
-  height: 100%;
-  width: 100%;
-  background: #f9f9f9;
-  display: flex;
-`;
-
-export const Container = styled(ContainerMt)`
-  margin: 0;
-  padding: 50px 27px !important;
-
-  @media (max-width: 600px) {
-    padding: 30px 10px !important;
-  }
-`;
+  appBarSpacer: theme.mixins.toolbar,
+  content: {
+    flexGrow: 1,
+    height: "100vh",
+    overflow: "auto",
+  },
+  container: {
+    paddingTop: theme.spacing(4),
+    paddingBottom: theme.spacing(4),
+  },
+  paper: {
+    padding: theme.spacing(2),
+    display: "flex",
+    overflow: "auto",
+    flexDirection: "column",
+  },
+  fixedHeight: {
+    height: 240,
+  },
+}));

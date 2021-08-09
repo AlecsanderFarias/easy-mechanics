@@ -8,7 +8,8 @@ import PrivateRoute from "./PrivateRoute";
 import SignIn from "../pages/Auth/SignIn";
 
 //Default Routes
-import Dashboard from "../pages/Default/Dashboard";
+import Clients from "../pages/Default/Client/List";
+import Client from "../pages/Default/Client/Edit";
 
 const Routes = () => {
   return (
@@ -17,7 +18,9 @@ const Routes = () => {
         {/* <LoginRoute path="/forgot" component={ForgotPassword} exact /> */}
         <LoginRoute path="/" component={SignIn} exact />
 
-        <PrivateRoute path="/home" isPrivate component={Dashboard} exact />
+        <PrivateRoute path="/home" isPrivate component={Clients} exact />
+        <PrivateRoute path="/client/:id" isPrivate component={Client} exact />
+        <PrivateRoute path="/client/new" isPrivate component={Client} exact />
       </Switch>
     </BrowserRouter>
   );
